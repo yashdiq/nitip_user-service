@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "./pkg/pb";
+
+
+service UserService {
+  rpc Save(SaveRequest) returns (SaveResponse) {}
+}
+
+message SaveRequest {
+  string username = 1;
+  string email = 2;
+  string phone = 3;
+}
+
+message SaveResponse {
+  int64 status = 1;
+  string error = 2;
+  // SaveRequest data = 3;
+}
