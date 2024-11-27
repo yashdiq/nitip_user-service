@@ -3,7 +3,8 @@ package db
 import (
 	"log"
 	"time"
-	"user-service/pkg/config"
+
+	"github.com/yashdiq/nitip_user-service/pkg/config"
 
 	"github.com/gocql/gocql"
 )

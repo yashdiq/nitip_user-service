@@ -4,11 +4,11 @@
 package di
 
 import (
-	http "user-service/pkg/api"
-	handler "user-service/pkg/api/handler"
+	http "github.com/yashdiq/nitip_user-service/pkg/api"
+	handler "github.com/yashdiq/nitip_user-service/pkg/api/handler"
 
-	db "user-service/pkg/db"
-	repo "user-service/pkg/repository"
+	db "github.com/yashdiq/nitip_user-service/pkg/db"
+	repo "github.com/yashdiq/nitip_user-service/pkg/repository"
 
 	"github.com/google/wire"
 )
@@ -22,3 +22,4 @@ func Initialize() (*http.ServerHttp, error) {
 	)
 	return &http.ServerHttp{}, nil
 }
+export GOPATH='/Users/iqra/go'

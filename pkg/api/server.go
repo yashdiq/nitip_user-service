@@ -3,11 +3,15 @@ package api
 import (
 	"log"
 	"net"
-	"user-service/pkg/api/handler"
-	"user-service/pkg/pb"
+
+	"github.com/yashdiq/nitip_user-service/pkg/api/handler"
+	"github.com/yashdiq/nitip_user-service/pkg/pb"
 
 	"github.com/gin-gonic/gin"
 	"google.golang.org/grpc"
+
+	"net/http"
+	_ "net/http/pprof"
 )
 
 type ServerHttp struct {
@@ -18,7 +22,7 @@ func NewServerHttp(userHandler *handler.UserHandler) *ServerHttp {
 	engine := gin.New()
 
 	go NewGrpcServer(userHandler, "8889")
-
+	
 	engine.Use(gin.Logger())
 
 	return &ServerHttp{
@@ -45,5 +49,9 @@ func NewGrpcServer(userHandler *handler.UserHandler, grpcPort string) {
 }
 
 func (s *ServerHttp) Start() {
+	go func() {
+		log.Println(http.ListenAndServe("localhost:6060", nil))
+	}()
+	
 	s.Engine.Run(":3333")
 }

@@ -5,9 +5,10 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"user-service/pkg/model"
-	"user-service/pkg/pb"
-	"user-service/pkg/repository/interfaces"
+
+	"github.com/yashdiq/nitip_user-service/pkg/model"
+	"github.com/yashdiq/nitip_user-service/pkg/pb"
+	"github.com/yashdiq/nitip_user-service/pkg/repository/interfaces"
 
 	"github.com/google/uuid"
 )
@@ -25,7 +26,7 @@ func NewUserHandler(userRepository interfaces.UserRepository) *UserHandler {
 
 func (h *UserHandler) Save(ctx context.Context, req *pb.SaveRequest) (*pb.SaveResponse, error) {
 	log.Printf("user: %+v\n", req)
-
+	
 	instance := model.User{
 		Id: uuid.NewString(),
 		Username: req.Username,

@@ -2,7 +2,8 @@ package main
 
 import (
 	"log"
-	"user-service/pkg/di"
+
+	"github.com/yashdiq/nitip_user-service/pkg/di"
 )
 
 func main() {

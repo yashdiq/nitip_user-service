@@ -1,4 +1,4 @@
-module user-service
+module github.com/yashdiq/nitip_user-service
 
 go 1.23.3
 

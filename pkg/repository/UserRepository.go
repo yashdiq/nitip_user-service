@@ -1,8 +1,8 @@
 package repository
 
 import (
-	"user-service/pkg/model"
-	"user-service/pkg/repository/interfaces"
+	"github.com/yashdiq/nitip_user-service/pkg/model"
+	"github.com/yashdiq/nitip_user-service/pkg/repository/interfaces"
 
 	"github.com/gocql/gocql"
 )
